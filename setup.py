@@ -1,15 +1,13 @@
-__author__ = ["author name"]
+__author__ = ["Leonidas Tsaprounis"]
 
 from setuptools import setup, find_packages
+from pycpp.utils import parse_requirements_file
 
 setup(
-    name="examplepackage",
-    version="x.x",
+    name="pycpp",
+    version="0.0.0",
     packages=find_packages(),
-    description="package description",
-    author="author name",
-    install_requires=[
-        "numpy>=1.0",
-        "pandas==1.0",
-    ],
+    description="experiments with cpp python binds",
+    author="Leonidas Tsaprounis",
+    install_requires=parse_requirements_file("requirements.txt"),
 )

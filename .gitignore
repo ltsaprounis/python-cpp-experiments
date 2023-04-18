@@ -132,3 +132,6 @@ dmypy.json
 .vscode
 
 .DS_Store
+
+#vim swap files
+.swp
