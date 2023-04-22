@@ -134,4 +134,4 @@ dmypy.json
 .DS_Store
 
 #vim swap files
-.swp
+*.swp
