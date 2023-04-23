@@ -1,5 +1,5 @@
 # Python-cpp-experiments
-Repo containing my experiments with writting C++ extensions for python with pybind11.
+My experiments with C++ extensions for python using pybind11.
 
 # Notes:
 To build the cpp package execute the following:
