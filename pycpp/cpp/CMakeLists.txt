@@ -8,9 +8,16 @@ project(my_linalg VERSION 0.0.1)
 
 # Pybind11
 find_package(pybind11 REQUIRED)
+# Armadillo
+find_package(armadillo REQUIRED)
+include_directories(${ARMADILLO_INCLUDE_DIRS})
+
 pybind11_add_module(my_linalg my_linalg.cpp)
 
 # add CARMA as a subdirectory
-# add_subdirectory(carma)
-# target_link_libraries(my_linalg PRIVATE carma::carma)
+add_subdirectory(carma)
+target_link_libraries(my_linalg 
+    PRIVATE carma::carma
+    ${ARMADILLO_LIBRARIES}
+)
 

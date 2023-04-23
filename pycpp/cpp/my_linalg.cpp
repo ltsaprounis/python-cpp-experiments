@@ -3,6 +3,9 @@
 // To compile and use as a python module:
 // $ c++ -O3 -Wall -shared -std=c++11 -undefined dynamic_lookup $(python3 -m pybind11 --includes) example.cpp -o example$(python3-config --extension-suffix)
 
+#include <carma>
+#include <armadillo>
+
 #include <pybind11/pybind11.h>
 #include <pybind11/numpy.h>
 namespace py = pybind11;
@@ -41,6 +44,13 @@ py::array_t<double> array_sum(py::array_t<double> arr1, py::array_t<double> arr2
   return result;
 }
 
+//armadillo dot product with carma autoconversion
+double arma_dot_product(arma::Col<double> arr1, arma::Col<double> arr2) {
+  double result = arma::dot(arr1, arr2);
+  return result;
+}
+
+
 PYBIND11_MODULE(my_linalg, m) {
   m.doc() = "pybind11 example plugin"; // module docstring
   m.attr("example_attr") = "An example attr";
@@ -49,6 +59,13 @@ PYBIND11_MODULE(my_linalg, m) {
     "dot_product",
     &dot_product,
     "dot product of 2 simple numpy arrays",
+    py::arg("arr1"),
+    py::arg("arr2")
+  );
+  m.def(
+    "arma_dot_product",
+    &arma_dot_product,
+    "armadillo based dot product of 2 simple numpy arrays",
     py::arg("arr1"),
     py::arg("arr2")
   );
