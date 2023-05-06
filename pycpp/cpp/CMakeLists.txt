@@ -12,7 +12,7 @@ find_package(pybind11 REQUIRED)
 find_package(armadillo REQUIRED)
 include_directories(${ARMADILLO_INCLUDE_DIRS})
 
-pybind11_add_module(my_linalg my_linalg.cpp)
+pybind11_add_module(_my_linalg my_linalg.cpp)
 
 # add CARMA as a subdirectory
 add_subdirectory(carma)
@@ -20,4 +20,6 @@ target_link_libraries(my_linalg
     PRIVATE carma::carma
     ${ARMADILLO_LIBRARIES}
 )
+
+install(TARGETS _my_linalg DESTINATION my_linalg)
 
