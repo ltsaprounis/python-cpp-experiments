@@ -51,7 +51,7 @@ double arma_dot_product(arma::Col<double> arr1, arma::Col<double> arr2) {
 }
 
 
-PYBIND11_MODULE(my_linalg, m) {
+PYBIND11_MODULE(_my_linalg, m) {
   m.doc() = "pybind11 example plugin"; // module docstring
   m.attr("example_attr") = "An example attr";
   m.def("add", &add, "A function that adds two numbers", py::arg("i"), py::arg("j"));
