@@ -30,5 +30,11 @@ dev = [
 addopts= "--ignore=pycpp/cpp/carma"
 
 [tool.scikit-build]
-wheel.expand-macos-universal-tags = true
+# wheel.expand-macos-universal-tags = true
+build-dir = "build"
+logging.level = "INFO"
+ninja.make-fallback = true
+# This activates verbose builds
+cmake.verbose = true
+ninja.minimum-version = "1.5"
 
