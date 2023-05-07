@@ -8,6 +8,8 @@ To build the cpp package execute the following:
 - `cmake .. -DPYTHON_EXECUTABLE=$(python3 -c "import sys; print(sys.executable)") -DCMAKE_INSTALL_PREFIX:PATH=..`
 - `make install`
 
+Or just install the package in editable mode with `pip install -e .` with scikit-build-core.
+
 The python module will be located in the build folder.
 
 Notes:
