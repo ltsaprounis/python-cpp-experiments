@@ -42,6 +42,9 @@ jobs:
     name: Python ${{ matrix.python-version }}
     steps:
       - uses: actions/checkout@v2
+      - name: Install armadillo
+        run:
+            brew install armadillo
       - name: Setup python
         uses: actions/setup-python@v2
         with:
@@ -51,5 +54,5 @@ jobs:
           python -m pip install --upgrade pip
           pip install -e ".[dev]"
       - name: Run tests
-        run: pytest
+        run: pytest pycpp
 
