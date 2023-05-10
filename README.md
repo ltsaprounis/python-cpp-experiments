@@ -5,7 +5,8 @@ My experiments with C++ extensions for python using pybind11.
 
 # TODOs:
 - [X] use scikit-build-core to compile the C++ modules
-- [ ] CI pipelines for test
+- [ ] CI pipelines for tests
+- [ ] Update Makefile
 - [ ] remove sphinx docs (won't ever publish them for this project)
 
 # Notes:
