@@ -45,6 +45,8 @@ jobs:
       - name: Install armadillo
         run:
             brew install armadillo
+      - name: init carma git-submodule
+        run: git submodule update --init
       - name: Setup python
         uses: actions/setup-python@v2
         with:
