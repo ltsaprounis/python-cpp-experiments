@@ -1,6 +1,10 @@
 # Python-cpp-experiments
 My experiments with C++ extensions for python using pybind11.
 
+<img width="1428" alt="python_braces" src="https://github.com/ltsaprounis/python-cpp-experiments/assets/64217214/a04a3f1a-5efe-4d5d-a546-cdbc245b21cc">  
+
+&nbsp;
+
 **⚠️This code is very WIP and will change frequently and in unpredictable ways⚠️**
 
 # Notes:
