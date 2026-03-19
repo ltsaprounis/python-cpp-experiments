@@ -14,8 +14,8 @@ int add(int i, int j) {
   return i + j;
 }
 
-float dot_product(py::array_t<double> arr1, py::array_t<double> arr2) {
-  float result = 0;
+double dot_product(py::array_t<double> arr1, py::array_t<double> arr2) {
+  double result = 0;
   py::buffer_info buff1 = arr1.request();
   py::buffer_info buff2 = arr2.request();
   int length = buff1.shape[0];
