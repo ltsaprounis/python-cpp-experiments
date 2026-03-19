@@ -31,6 +31,7 @@ addopts= "--ignore=pycpp/cpp/carma"
 
 [tool.scikit-build]
 # wheel.expand-macos-universal-tags = true
+wheel.packages = ["pycpp"]
 build-dir = "build"
 logging.level = "INFO"
 ninja.make-fallback = true
