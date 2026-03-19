@@ -5,8 +5,6 @@ My experiments with C++ extensions for python using pybind11.
 
 &nbsp;
 
-**⚠️This code is very WIP and will change frequently and in unpredictable ways⚠️**
-
 # Prerequisites
 
 - **Python 3.8–3.10** with `pip` (version 22+ recommended for editable installs)
