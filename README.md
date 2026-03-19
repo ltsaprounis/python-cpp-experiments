@@ -7,18 +7,56 @@ My experiments with C++ extensions for python using pybind11.
 
 **⚠️This code is very WIP and will change frequently and in unpredictable ways⚠️**
 
-# Notes:
-To build the cpp package execute the following:
-- `mkdir build`
-- `cd build` 
-- `cmake .. -DPYTHON_EXECUTABLE=$(python3 -c "import sys; print(sys.executable)") -DCMAKE_INSTALL_PREFIX:PATH=..`
-- `make install`
+# Prerequisites
 
-To build the project using [scikit-build-core](https://github.com/scikit-build/scikit-build-core) simply do `pip install -e .`
+- **Python 3.8–3.10** with `pip` (version 22+ recommended for editable installs)
+- **CMake** (>= 3.16)
+- **Armadillo** C++ linear algebra library — install via your package manager:
+  - macOS: `brew install armadillo`
+  - Ubuntu/Debian: `sudo apt install libarmadillo-dev`
+- **A C++17 compiler** (e.g. AppleClang, GCC, MSVC)
 
-Notes:
-- -DCMAKE_INSTALL_PREFIX:PATH is set to .. to make the path in the install command in
-the CMakeLists.txt file relative to the location of the file.
+# Build
+
+## Option 1: scikit-build-core (recommended)
+
+1. Initialize git submodules (required for carma):
+
+   ```bash
+   git submodule update --init --recursive
+   ```
+
+2. Install the project in editable mode:
+
+   ```bash
+   pip install -e ".[dev]"
+   ```
+
+## Option 2: Manual cmake build
+
+1. Initialize git submodules (required for carma):
+
+   ```bash
+   git submodule update --init --recursive
+   ```
+
+2. Install Python build dependencies:
+
+   ```bash
+   pip install "pybind11[global]>=2.6.0" "numpy>=1.14"
+   ```
+
+3. Build with cmake:
+
+   ```bash
+   mkdir build
+   cd build
+   cmake .. -DPYTHON_EXECUTABLE=$(python3 -c "import sys; print(sys.executable)") -DCMAKE_INSTALL_PREFIX:PATH=..
+   make install
+   ```
+
+   > **Note:** `-DCMAKE_INSTALL_PREFIX:PATH` is set to `..` to make the path in the install
+   > command in the CMakeLists.txt file relative to the location of the file.
 
 # TODOs:
 - [X] use scikit-build-core to compile the C++ modules
